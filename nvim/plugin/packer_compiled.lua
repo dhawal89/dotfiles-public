@@ -79,11 +79,12 @@ _G.packer_plugins = {
     path = "/Users/dhawal/.local/share/nvim/site/pack/packer/start/bufdelete.nvim",
     url = "https://github.com/famiu/bufdelete.nvim"
   },
-  ["everforest-nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0" },
+  ["doom-one"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0" },
     loaded = true,
-    path = "/Users/dhawal/.local/share/nvim/site/pack/packer/start/everforest-nvim",
-    url = "https://github.com/neanias/everforest-nvim"
+    needs_bufread = false,
+    path = "/Users/dhawal/.local/share/nvim/site/pack/packer/opt/doom-one",
+    url = "https://github.com/NTBBloodbath/doom-one.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -132,6 +133,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/dhawal/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  onedark = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0" },
+    loaded = true,
+    path = "/Users/dhawal/.local/share/nvim/site/pack/packer/start/onedark",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -199,7 +206,7 @@ _G.packer_plugins = {
     url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   vimwiki = {
-    config = { "\27LJ\2\nÔ\1\0\0\4\0\b\0\r6\0\0\0009\0\1\0004\1\3\0005\2\3\0006\3\4\0=\3\5\2>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\vsyntax\rmarkdown\1\0\2\tpath$~/Documents/CO/personal/vimwiki\bext\b.md\17vimwiki_list\6g\bvim\0" },
+    config = { "\27LJ\2\nÔ\1\0\0\4\0\b\0\r6\0\0\0009\0\1\0004\1\3\0005\2\3\0006\3\4\0=\3\5\2>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\vsyntax\rmarkdown\1\0\2\bext\b.md\tpath$~/Documents/CO/personal/vimwiki\17vimwiki_list\6g\bvim\0" },
     loaded = true,
     path = "/Users/dhawal/.local/share/nvim/site/pack/packer/start/vimwiki",
     url = "https://github.com/vimwiki/vimwiki"
@@ -241,26 +248,37 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
+-- Setup for: doom-one
+time([[Setup for doom-one]], true)
+try_loadstring("\27LJ\2\n»\6\0\0\2\0\21\0M6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\3\0006\0\0\0009\0\1\0+\1\2\0=\1\4\0006\0\0\0009\0\1\0+\1\2\0=\1\5\0006\0\0\0009\0\1\0+\1\1\0=\1\6\0006\0\0\0009\0\1\0+\1\1\0=\1\a\0006\0\0\0009\0\1\0+\1\1\0=\1\b\0006\0\0\0009\0\1\0)\1\20\0=\1\t\0006\0\0\0009\0\1\0+\1\2\0=\1\n\0006\0\0\0009\0\1\0+\1\1\0=\1\v\0006\0\0\0009\0\1\0+\1\2\0=\1\f\0006\0\0\0009\0\1\0+\1\2\0=\1\r\0006\0\0\0009\0\1\0+\1\2\0=\1\14\0006\0\0\0009\0\1\0+\1\2\0=\1\15\0006\0\0\0009\0\1\0+\1\2\0=\1\16\0006\0\0\0009\0\1\0+\1\2\0=\1\17\0006\0\0\0009\0\1\0+\1\2\0=\1\18\0006\0\0\0009\0\1\0+\1\2\0=\1\19\0006\0\0\0009\0\1\0+\1\1\0=\1\20\0K\0\1\0\28doom_one_plugin_lspsaga#doom_one_plugin_vim_illuminate%doom_one_plugin_indent_blankline\29doom_one_plugin_whichkey\29doom_one_plugin_startify\30doom_one_plugin_dashboard\30doom_one_plugin_nvim_tree\27doom_one_plugin_neogit\30doom_one_plugin_telescope\27doom_one_plugin_barbar\26doom_one_plugin_neorg#doom_one_pumblend_transparency\29doom_one_pumblend_enable$doom_one_transparent_background$doom_one_diagnostics_text_color\31doom_one_enable_treesitter\29doom_one_italic_comments\29doom_one_terminal_colors\29doom_one_cursor_coloring\6g\bvim\0", "setup", "doom-one")
+time([[Setup for doom-one]], false)
+time([[packadd for doom-one]], true)
+vim.cmd [[packadd doom-one]]
+time([[packadd for doom-one]], false)
 -- Config for: nvim-transparent
 time([[Config for nvim-transparent]], true)
 require("setup/transparent")
 time([[Config for nvim-transparent]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require("setup/autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: everforest-nvim
-time([[Config for everforest-nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0", "config", "everforest-nvim")
-time([[Config for everforest-nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 require("setup/which")
 time([[Config for which-key.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require("setup/autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: vimwiki
 time([[Config for vimwiki]], true)
-try_loadstring("\27LJ\2\nÔ\1\0\0\4\0\b\0\r6\0\0\0009\0\1\0004\1\3\0005\2\3\0006\3\4\0=\3\5\2>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\vsyntax\rmarkdown\1\0\2\tpath$~/Documents/CO/personal/vimwiki\bext\b.md\17vimwiki_list\6g\bvim\0", "config", "vimwiki")
+try_loadstring("\27LJ\2\nÔ\1\0\0\4\0\b\0\r6\0\0\0009\0\1\0004\1\3\0005\2\3\0006\3\4\0=\3\5\2>\2\1\1=\1\2\0006\0\0\0009\0\1\0005\1\a\0=\1\6\0K\0\1\0\1\0\3\b.md\rmarkdown\v.mdown\rmarkdown\14.markdown\rmarkdown\23vimwiki_ext2syntax\vsyntax\rmarkdown\1\0\2\bext\b.md\tpath$~/Documents/CO/personal/vimwiki\17vimwiki_list\6g\bvim\0", "config", "vimwiki")
 time([[Config for vimwiki]], false)
+-- Config for: onedark
+time([[Config for onedark]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme onedark\bcmd\bvim\0", "config", "onedark")
+time([[Config for onedark]], false)
+-- Config for: doom-one
+time([[Config for doom-one]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\25colorscheme doom-one\bcmd\bvim\0", "config", "doom-one")
+time([[Config for doom-one]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

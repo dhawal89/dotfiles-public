@@ -111,7 +111,7 @@ return require('packer').startup({
     config = get_setup("lualine"),
     requires = { "nvim-web-devicons", opt = true },
   })
---  use({ "kyazdani42/nvim-web-devicons" })
+  --  use({ "kyazdani42/nvim-web-devicons" })
 
   -- auto bracket pair
   use({
@@ -125,47 +125,79 @@ return require('packer').startup({
 
   -- use({"marko-cerovac/material.nvim"})
   -- use({"EdenEast/nightfox.nvim", config = get_setup("nightfox") })
+  -- rose-pine
+
+  -- use({ 
+  --   'rose-pine/neovim',
+  --   as = 'rose-pine',
+  --   config = function()
+  --     vim.cmd('colorscheme rose-pine')
+  --   end
+  -- })
+  
+  -- use({
+  --   'catppuccin/nvim',
+  --   as = 'catppuccin',
+  --   config = function()
+  --     vim.cmd('colorscheme catppuccin')
+  --   end
+  -- })
 
   use({
-    "neanias/everforest-nvim",
-    -- Optional; default configuration will be used if setup isn't called.
+    'olimorris/onedarkpro.nvim',
+    as = 'onedark',
     config = function()
-      require("everforest").setup()
+      vim.cmd('colorscheme onedark')
+    end
+  })
+  
+  use({
+      'NTBBloodbath/doom-one.nvim',
+      as = 'doom-one',
+      setup = function()
+          -- Add color to cursor
+  		vim.g.doom_one_cursor_coloring = true
+  		-- Set :terminal colors
+  		vim.g.doom_one_terminal_colors = true
+  		-- Enable italic comments
+  		vim.g.doom_one_italic_comments = true
+  		-- Enable TS support
+  		vim.g.doom_one_enable_treesitter = true
+  		-- Color whole diagnostic text or only underline
+          vim.g.doom_one_diagnostics_text_color = false
+  		-- Enable transparent background
+  		vim.g.doom_one_transparent_background = false
+  
+          -- Pumblend transparency
+  		vim.g.doom_one_pumblend_enable = false
+  		vim.g.doom_one_pumblend_transparency = 20
+  
+          -- Plugins integration
+  		vim.g.doom_one_plugin_neorg = true
+  		vim.g.doom_one_plugin_barbar = false
+  		vim.g.doom_one_plugin_telescope = true
+  		vim.g.doom_one_plugin_neogit = true
+  		vim.g.doom_one_plugin_nvim_tree = true
+  		vim.g.doom_one_plugin_dashboard = true
+  		vim.g.doom_one_plugin_startify = true
+  		vim.g.doom_one_plugin_whichkey = true
+  		vim.g.doom_one_plugin_indent_blankline = true
+  		vim.g.doom_one_plugin_vim_illuminate = true
+  		vim.g.doom_one_plugin_lspsaga = false
     end,
+    config = function()
+      vim.cmd('colorscheme doom-one')
+    end
   })
 
   -- use({
-  --   "NTBBloodbath/doom-one.nvim",
-  --     config = function()
-  --         require('doom-one').setup({
-  --             cursor_coloring = false,
-  --             terminal_colors = false,
-  --             italic_comments = false,
-  --             enable_treesitter = true,
-  --             transparent_background = false,
-  --             pumblend = {
-  --                 enable = true,
-  --                 transparency_amount = 20,
-  --             },
-  --             plugins_integrations = {
-  --                 neorg = true,
-  --                 barbar = true,
-  --                 bufferline = false,
-  --                 gitgutter = false,
-  --                 gitsigns = true,
-  --                 telescope = true,
-  --                 neogit = true,
-  --                 nvim_tree = true,
-  --                 dashboard = true,
-  --                 startify = true,
-  --                 whichkey = true,
-  --                 indent_blankline = true,
-  --                 vim_illuminate = true,
-  --                 lspsaga = false,
-  --             },
-  --         })
-  --     end,
-  --   })
+  --   "neanias/everforest-nvim",
+  --   -- Optional; default configuration will be used if setup isn't called.
+  --   config = function()
+  --     require("everforest").setup()
+  --   end,
+  -- })
+
 
   use({
     "norcalli/nvim-colorizer.lua",
